@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 const dimensions = Dimensions.get('window');
+console.disableYellowBox = true;
 
 export default class Label extends React.Component {
 
@@ -23,15 +24,18 @@ export default class Label extends React.Component {
                 style={[buttonStyle.deliveryLabel]}
                 onPress={this.props.onPress}
                 activeOpacity={0.7}>
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                    <View style={{flex: 0.2,}}>
+                <View style={buttonStyle.container}>
+                    <View style={buttonStyle.iconHolder}>
                     <Image
-                        source={require('./images/DALIlogo.png')}
-                        style={{flex:1, height: undefined, width: undefined}}
+                        source={{uri: this.props.iconURL}}
+                        style={buttonStyle.image}
                     />
                     </View> 
+                    <View style={{flex: 0.02}}>
+                    </View>
                     <View style={buttonStyle.nameAndTime}>
-                        <Text style={buttonStyle.text}>{this.props.firstName} {this.props.lastName}</Text>
+                        <Text style={buttonStyle.text}>{this.props.name}</Text>
+                        <Text style={buttonStyle.message}>{this.props.message}</Text>
                     </View>
                 </View>    
             </TouchableOpacity>
@@ -44,7 +48,13 @@ export default class Label extends React.Component {
 const buttonStyle = StyleSheet.create({
   text:{
     color: '#000000',
-    fontWeight: '700'
+    fontWeight: '700',
+    fontSize: 18,
+  },
+  message:{
+    color: '#000000',
+    fontWeight: '700',
+    fontSize: 12,
   },
   deliveryLabel:{
     width: dimensions.width*0.9,
@@ -56,8 +66,22 @@ const buttonStyle = StyleSheet.create({
     borderRadius: 5,
   },
   nameAndTime:{
-    flex: 0.8,
+    flex: 0.7,
+    flexDirection: 'column',
+  },
+  image: {
+    height: 68,
+    width: 68,
+    borderRadius: 34,
+    resizeMode: 'center',
+  },
+  iconHolder:{
+    flex: 0.25,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+  },
+  container:{
+    flex: 1, 
+    flexDirection: 'row'
   }
 })

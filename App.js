@@ -25,52 +25,82 @@ export default class App extends React.Component {
   constructor(props){
     super(props)
     this.state={
+      isLoading: true,
       data: null
     }
+    this.getData();
   }
 
-  
+  getData() {
+    return fetch('http://mappy.dali.dartmouth.edu/members.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          data: responseJson,
+          isLoading: false
+        }, function() {
+          // do something with new state
+          console.log(this.state.data)
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  generateLabels(){
+    let labels = []
+    for (index = 0; index < this.state.data.length; index++){
+      labels.push(
+        <Label
+          key={index}
+          name={this.state.data[index].name}
+          iconURL={"http://mappy.dali.dartmouth.edu/"+this.state.data[index].iconUrl}
+          message={this.state.data[index].message}
+        />
+      )
+    }
+    return labels
+  }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <StatusBar
-        backgroundColor="blue"
-        barStyle="light-content"
-        hidden={true}
-        />
-        <View 
-        style = {{
-        alignItems: 'center',
-        shadowOpacity: 0.3,
-        shadowRadius: 5,
-        shadowColor: 'black',
-        shadowOffset: { height: 10, width: 0 },
-        }}
-        >
-        <Image
-          source={require('./images/DALIlogo.png')}
-          style={{
-            height: 75,
-            resizeMode: 'contain',
+    if (this.state.isLoading == true) {
+      return <View><Text>Loading...</Text></View>;
+    }
+    if (this.state.isLoading == false) {
+      return (
+        <View style={styles.container}>
+          <StatusBar
+          backgroundColor="blue"
+          barStyle="light-content"
+          hidden={true}
+          />
+          <View 
+          style = {{
+          alignItems: 'center',
+          shadowOpacity: 0.3,
+          shadowRadius: 5,
+          shadowColor: 'black',
+          shadowOffset: { height: 10, width: 0 },
           }}
-        />
+          >
+          <Image
+            source={require('./images/DALIlogo.png')}
+            style={{
+              height: 75,
+              resizeMode: 'contain',
+            }}
+          />
+          </View>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <Text style={styles.welcome}>
+              Meet our Members
+            </Text>
+            {this.generateLabels()}
+          </ScrollView>
         </View>
-        <ScrollView>
-          <Text style={styles.welcome}>
-            Meet our Members
-          </Text>
-          <Label
-            firstName={"Brayan"}
-            lastName={"Lozano"}
-          />
-          <Label
-            firstName={"Brayan"}
-            lastName={"Lozano"}
-          />
-        </ScrollView>
-      </View>
-    );
+      );
+    }
   }
 }
 
