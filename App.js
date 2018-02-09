@@ -14,8 +14,10 @@ import {
   Image,
   StatusBar,
   ScrollView,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from 'react-native';
+import Modal from "react-native-modal";
 
 import Label from "./Label.js"
 
@@ -26,7 +28,8 @@ export default class App extends React.Component {
     super(props)
     this.state={
       isLoading: true,
-      data: null
+      data: null,
+      isModalVisible: false
     }
     this.getData();
   }
@@ -53,7 +56,9 @@ export default class App extends React.Component {
     for (index = 0; index < this.state.data.length; index++){
       labels.push(
         <Label
+          data={this.state.data}
           key={index}
+          index={index}
           name={this.state.data[index].name}
           iconURL={"http://mappy.dali.dartmouth.edu/"+this.state.data[index].iconUrl}
           message={this.state.data[index].message}
@@ -98,6 +103,7 @@ export default class App extends React.Component {
             </Text>
             {this.generateLabels()}
           </ScrollView>
+ 
         </View>
       );
     }
@@ -122,4 +128,11 @@ const styles = StyleSheet.create({
     color: '#F5FCFF',
     marginBottom: 5,
   },
+  modal: {
+    height: dimensions.height*0.6,
+    width: dimensions.width*0.6,
+    backgroundColor: '#F5FCFF',
+    padding: 6,
+    borderRadius: 5,
+  }
 });
