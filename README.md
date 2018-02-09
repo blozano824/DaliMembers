@@ -26,6 +26,6 @@ This app was entirely built using React Native, Google Apps Scripts and several 
 :iphone: Screenshots
 -------------
 <p align="center">
-  <img src="https://github.com/blozano824/DaliMembers/blob/master/images/screenshot1.png" alt="Drawing" height="50%" width="50%"/>
-  <img src="https://github.com/blozano824/DaliMembers/blob/master/images/screenshot2.png" alt="Drawing" height="50%" width="50%"/>
+  <img src="https://github.com/blozano824/DaliMembers/blob/master/images/screenshot1.png" alt="Drawing" height="40%" width="40%"/>
+  <img src="https://github.com/blozano824/DaliMembers/blob/master/images/screenshot2.png" alt="Drawing" height="40%" width="40%"/>
 </p>
