@@ -11,6 +11,7 @@
     "react-native": "0.53.0",
     "react-native-easy-grid": "^0.1.17",
     "react-native-google-static-map": "^0.1.11",
+    "react-native-iphone-x-helper": "^1.0.2",
     "react-native-modal": "^5.0.0",
     "react-native-navbar": "^2.1.0"
   },

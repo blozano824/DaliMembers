@@ -96,7 +96,7 @@ export default class Label extends React.Component {
                         style={buttonStyle.imageLabel}
                     />
                     </View> 
-                    <View style={{flex: 0.02}}>
+                    <View style={{flex: 0.04}}>
                     </View>
                     <View style={buttonStyle.nameAndTime}>
                         <Text style={buttonStyle.nameLabel}>{this.props.name}</Text>
@@ -196,7 +196,9 @@ const buttonStyle = StyleSheet.create({
   },
   container:{
     flex: 1, 
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   modal: {
     alignItems: 'center',
