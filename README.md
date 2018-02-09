@@ -1,26 +1,25 @@
-# Welcome to the Dartmouth Organic Farm app!🚜👩‍🌾🌽🐟🐝 
+# Welcome to the DALI Member app!📱🖥🙎🙎‍♂️
 
 
-Hey! This app was designed to allow Dartmouth Students to better interact with the many activities the Organic Farm has to offer. This app began development in the summer of 2017 and was built by  [Brayan Lozano '20](www.brayanlozano.com).
-<p align="center"><img src="https://github.com/blozano824/DartmouthOrganicFarm/blob/master/img/Dartmouth%20Organic%20Farm.png" alt="Drawing" height="40%" width="40%"/></p>
+Hey! This app was designed to complete challenge #2 of my DALI Lab 2018 Spring application. [Brayan Lozano '20](www.brayanlozano.com).
+<p align="center"><img src="https://github.com/blozano824/DaliMembers/blob/master/images/appIcon.png" alt="Drawing" height="40%" width="40%"/></p>
 
 
 :clipboard: Features
 ----------------------------------------------------
 
-Version 1 was primarily built for summer farm interns to quickly and efficiently log daily and weekly data collected on tilapia fish tanks. The app also notifies the user when there are any abnormalities with the tank's **pH**, **temperature**, or **dissolved oxygen levels**. Tanks can also be added or eliminated when fish are moved from the farm's solar greenhouse to a temperature-controlled room during the cold Hanover winters. Version 2 will display graphs of each individual tank's data trends as well as an interactive fish tank explaining how our aquaponics system operates. The app is currently only available on iOS but Android is coming soon!
+Version 1 fetches a JSON file from DALI's servers with information about its members, their hometown, and other details. Using this JSON, labels are generated for each member that displays their photo, their name, their quote. Once pressed, a modal appears displaying more information such as a map with their hometown, the projects they have worked on, and even the terms they have worked with DALI. If their photo is clicked, the user is redirected to the members personal website in Safari. This version was strictly built and designed for iOS but will still compile for android.
 
 
 :wrench: How it Was Built
 -------------
 
-This app was entirely built using React Native, Google Apps Scripts and several node modules.
+This app was entirely built using React Native and several community built node modules.
 > **Modules:**
 > - **[React Native](https://facebook.github.io/react-native/)** is used for building all core components and provides compatibility for iOS and Android.
-> - **[React Native Navigation](https://github.com/wix/react-native-navigation)** is used for creating a tab based application with lightboxes and a sidebar.
-> - **[React Native Snap Carousel](https://github.com/archriss/react-native-snap-carousel)** is used for designing swipeable data previews for all fish tanks.
-> - **[Firebase](https://www.npmjs.com/package/firebase)** is used for creating a realtime database of all recorded data for all users
-> - **[Google Apps Scripts](https://www.google.com/script/start/)** is used for transferring daily data from Firebase over to Google Sheets.
+> - **[React Native Modal](https://github.com/react-native-community/react-native-modal)** is used for creating modals to display more information.
+> - **[React Native Google Static Map](https://github.com/yelled3/react-native-google-static-map)** is used for displaying each members hometown using longtitude and latitude coordinates.
+> - **[React Native Iphone X Helper](https://github.com/ptelad/react-native-iphone-x-helper)** is used for displaying properly sized headers on iPhone X displays
 
 
 :iphone: Screenshots
