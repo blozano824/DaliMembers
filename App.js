@@ -5,7 +5,6 @@
  */
 
 import React, { Component } from 'react';
-import NavigationBar from 'react-native-navbar';
 import {
   Platform,
   StyleSheet,
