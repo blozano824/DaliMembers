@@ -1,7 +1,7 @@
 # Welcome to the DALI Member app!📱🖥🙎🙎‍♂️
 
 
-Hey! This app was designed to complete challenge #2 of my DALI Lab 2018 Spring application. [Brayan Lozano '20](https://www.brayanlozano.com).
+Hey! This app was designed to complete challenge #2 of my DALI Lab 2018 Spring application. [Brayan Lozano '20](http://www.brayanlozano.com).
 <p align="center"><img src="https://github.com/blozano824/DaliMembers/blob/master/images/appIcon.png" alt="Drawing" height="40%" width="40%"/></p>
 
 
