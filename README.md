@@ -28,3 +28,12 @@ This app was entirely built using React Native and several community built node 
   <img src="https://github.com/blozano824/DaliMembers/blob/master/images/screenshot1.png" alt="Drawing" height="40%" width="40%"/>
   <img src="https://github.com/blozano824/DaliMembers/blob/master/images/screenshot2.png" alt="Drawing" height="40%" width="40%"/>
 </p>
+
+:articulated_lorry: How to run
+-------------
+To compile and run simply use the following commands.
+```
+$ cd DaliMembers-master
+$ npm install
+$ react-native run-ios
+```
