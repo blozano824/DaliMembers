@@ -74,9 +74,11 @@ export default class Label extends React.Component {
                 <Text style={buttonStyle.text}>Projects</Text>
             )
             for(i = 0; i < this.props.data[index].project.length; i++){
-                projects.push(
-                    <Text>{this.props.data[index].project[i]}</Text>
-                )
+                if (this.props.data[index].project[i].length > 0){
+                    projects.push(
+                        <Text>{this.props.data[index].project[i]}</Text>
+                    )
+                }
             }
         }
         return projects
@@ -180,7 +182,7 @@ const buttonStyle = StyleSheet.create({
     height: 68,
     width: 68,
     borderRadius: 34,
-    resizeMode: 'center',
+    resizeMode: 'cover',
   },
   imageModal: {
     marginTop: 10,

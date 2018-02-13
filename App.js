@@ -94,7 +94,33 @@ export default class App extends React.Component {
 
   render() {
     if (this.state.isLoading == true) {
-      return <View><Text>Loading...</Text></View>;
+      return (
+        <View style={styles.container}>
+          <StatusBar
+          backgroundColor="blue"
+          barStyle="light-content"
+          hidden={false}
+          />
+          <View 
+          style = {{
+            width: 100,
+            alignItems: 'center',
+            shadowOpacity: 0.3,
+            shadowRadius: 5,
+            shadowColor: 'black',
+            shadowOffset: { height: 10, width: 0 },
+            zIndex: 1,
+          }}
+          >
+            {this.renderHeader()}
+          </View>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <Text style={styles.welcome}>
+              Meet our Members
+            </Text>
+          </ScrollView>
+        </View>
+      );
     }
     if (this.state.isLoading == false) {
       return (
@@ -106,15 +132,16 @@ export default class App extends React.Component {
           />
           <View 
           style = {{
-          width: 100,
-          alignItems: 'center',
-          shadowOpacity: 0.3,
-          shadowRadius: 5,
-          shadowColor: 'black',
-          shadowOffset: { height: 10, width: 0 },
+            width: 100,
+            alignItems: 'center',
+            shadowOpacity: 0.3,
+            shadowRadius: 5,
+            shadowColor: 'black',
+            shadowOffset: { height: 10, width: 0 },
+            zIndex: 1,
           }}
           >
-          {this.renderHeader()}
+            {this.renderHeader()}
           </View>
           <ScrollView showsVerticalScrollIndicator={false}>
             <Text style={styles.welcome}>
@@ -122,7 +149,6 @@ export default class App extends React.Component {
             </Text>
             {this.generateLabels()}
           </ScrollView>
- 
         </View>
       );
     }
