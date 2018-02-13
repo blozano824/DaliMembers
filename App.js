@@ -1,7 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Brayan Lozano
+ * Dali Lab Challenge #3
  */
 
 import React, { Component } from 'react';
